@@ -64,11 +64,11 @@ function MainContent() {
             }
 
 
-            // try {
+            try {
                 setIsLoading(true);
                 setError(null);
 
-                const apiKey = import.meta.env.VITE_WEATHER_API_KEY;console.log(apiKey);
+                const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
                 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=zh_tw`;
                 const response = await fetch(apiUrl);
                 const weatherJson = await response.json();
@@ -78,15 +78,15 @@ function MainContent() {
                 }
 
                 setWeatherData(weatherJson);
-            // }
-            // catch (err) {
+            }
+            catch (err) {
                 setError(err.message);
-            // }
-            // finally {
+            }
+            finally {
                 setIsLoading(false);
 
                 localStorage.setItem('cityName', cityName);
-            // }
+            }
         }
 
         fetchData();
