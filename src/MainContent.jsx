@@ -68,7 +68,7 @@ function MainContent() {
                 setIsLoading(true);
                 setError(null);
 
-                const apiKey = "8d220828c8ae08d4af9e4e789946b032";
+                const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
                 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=zh_tw`;
                 const response = await fetch(apiUrl);
                 const weatherJson = await response.json();
