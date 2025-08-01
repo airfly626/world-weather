@@ -64,7 +64,7 @@ function MainContent() {
             }
 
 
-            try {
+            // try {
                 setIsLoading(true);
                 setError(null);
 
@@ -78,15 +78,15 @@ function MainContent() {
                 }
 
                 setWeatherData(weatherJson);
-            }
-            catch (err) {
+            // }
+            // catch (err) {
                 setError(err.message);
-            }
-            finally {
+            // }
+            // finally {
                 setIsLoading(false);
 
                 localStorage.setItem('cityName', cityName);
-            }
+            // }
         }
 
         fetchData();
